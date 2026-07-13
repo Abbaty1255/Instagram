@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Verification • Official</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@700&display=swap');
+        
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        
+        .logo-font {
+            font-family: 'Playfair Display', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #405DE6, #5851DB, #833AB4, #E1306C, #FD1D1D);
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .processing-bar {
+            animation: progress 18s linear forwards;
+        }
+
+        @keyframes progress {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+
+        .instagram-logo {
+            background: radial-gradient(circle at 30% 30%, #fff 0%, #E1306C 40%, #405DE6 80%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-white">
+    <!-- Landing Page -->
+    <div id="landing" class="min-h-screen gradient-bg flex items-center justify-center">
+        <div class="max-w-4xl mx-auto px-6 py-16 text-center">
+            <!-- Header -->
+            <div class="flex justify-center mb-8">
+                <div class="flex items-center gap-3">
+                    <i class="fa-brands fa-instagram text-7xl instagram-logo"></i>
+                    <div>
+                        <h1 class="text-5xl font-bold logo-font tracking-tight">Instagram</h1>
+                        <p class="text-xl text-white/90 -mt-2">Verification Center</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="text-4xl font-semibold mb-6">Get Verified • Blue Check in 30 Minutes</h2>
+            
+            <div class="bg-black/40 backdrop-blur-xl rounded-3xl p-10 max-w-2xl mx-auto mb-12">
+                <div class="space-y-6 text-left">
+                    <div class="flex gap-4 items-start">
+                        <div class="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <i class="fa-solid fa-check text-emerald-400"></i>
+                        </div>
+                        <div>
+                            <p class="font-medium">Official Instagram Partner</p>
+                            <p class="text-white/70 text-sm">Trusted by over 250,000 creators worldwide</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <i class="fa-solid fa-clock text-emerald-400"></i>
+                        </div>
+                        <div>
+                            <p class="font-medium">Fast Processing</p>
+                            <p class="text-white/70 text-sm">Blue check appears within 30 minutes of successful verification</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <i class="fa-solid fa-shield-halved text-emerald-400"></i>
+                        </div>
+                        <div>
+                            <p class="font-medium">Secure &amp; Reliable</p>
+                            <p class="text-white/70 text-sm">Your account information is protected with bank-level encryption</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <i class="fa-solid fa-users text-emerald-400"></i>
+                        </div>
+                        <div>
+                            <p class="font-medium">Real User Experiences</p>
+                            <p class="text-white/70 text-sm">"Got verified in 22 minutes! My engagement tripled." — @fashionwithkemi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="showSignup()" 
+                    class="bg-white text-black font-semibold text-xl px-12 py-5 rounded-2xl hover:bg-white/90 transition-all inline-flex items-center gap-3">
+                <span>Get Verified Now</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+            <p class="mt-8 text-white/60 text-sm">Takes only 2 minutes to start • Instant access after signup</p>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signup-modal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center">
+        <div class="bg-zinc-900 rounded-3xl p-8 max-w-md w-full mx-4">
+            <h3 class="text-2xl font-semibold mb-6 text-center">Create Account</h3>
+            
+            <div class="space-y-5">
+                <div>
+                    <label class="block text-sm mb-2 text-white/70">Username</label>
+                    <input id="username" 
+                           type="text" 
+                           placeholder="e.g. creative_tech01"
+                           class="w-full bg-zinc-800 border border-zinc-700 rounded-xl px-5 py-4 focus:outline-none focus:border-pink-500">
+                    <p id="username-hint" class="text-xs text-white/50 mt-1">Must contain letters and numbers</p>
+                </div>
+                
+                <div>
+                    <label class="block text-sm mb-2 text-white/70">Password</label>
+                    <input id="password" 
+                           type="password" 
+                           placeholder="Create strong password"
+                           class="w-full bg-zinc-800 border border-zinc-700 rounded-xl px-5 py-4 focus:outline-none focus:border-pink-500">
+                    <p id="password-hint" class="text-xs text-white/50 mt-1">8+ characters • letters, numbers &amp; symbols</p>
+                </div>
+
+                <button onclick="handleSignup()" 
+                        class="w-full bg-gradient-to-r from-pink-500 to-purple-600 py-4 rounded-2xl font-semibold text-lg hover:brightness-110 transition">
+                    Create Account &amp; Continue
+                </button>
+            </div>
+
+            <button onclick="hideSignup()" 
+                    class="text-white/60 hover:text-white mt-6 w-full text-center text-sm">Cancel</button>
+        </div>
+    </div>
+
+    <!-- Main Dashboard -->
+    <div id="dashboard" class="hidden min-h-screen bg-zinc-950">
+        <!-- Top Nav -->
+        <nav class="bg-black border-b border-white/10">
+            <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <i class="fa-brands fa-instagram text-4xl instagram-logo"></i>
+                    <div class="font-semibold text-2xl logo-font">Verify</div>
+                </div>
+                
+                <div class="flex items-center gap-6">
+                    <div id="user-display" class="flex items-center gap-2 bg-zinc-900 px-5 py-2 rounded-2xl">
+                        <i class="fa-solid fa-user text-emerald-400"></i>
+                        <span class="font-medium" id="current-username"></span>
+                    </div>
+                    <button onclick="logout()" 
+                            class="text-white/60 hover:text-white transition">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="max-w-6xl mx-auto px-6 py-12">
+            <h2 class="text-4xl font-semibold mb-2">Choose Service</h2>
+            <p class="text-white/60 mb-10">Select the service you need for your Instagram account</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Card 1 -->
+                <div onclick="selectService(1)" 
+                     class="card-hover bg-zinc-900 border border-white/10 rounded-3xl p-8 cursor-pointer">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <div class="text-4xl mb-3">✅</div>
+                            <h3 class="text-2xl font-semibold">Verify Account</h3>
+                            <p class="text-emerald-400 font-medium mt-1">N10,000</p>
+                        </div>
+                        <div class="text-5xl opacity-20">1</div>
+                    </div>
+                    <p class="text-white/60 mt-8">Get the official blue verification badge</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div onclick="selectService(2)" 
+                     class="card-hover bg-zinc-900 border border-white/10 rounded-3xl p-8 cursor-pointer">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <div class="text-4xl mb-3">🔓</div>
+                            <h3 class="text-2xl font-semibold">Unban Account</h3>
+                            <p class="text-emerald-400 font-medium mt-1">N13,000</p>
+                        </div>
+                        <div class="text-5xl opacity-20">2</div>
+                    </div>
+                    <p class="text-white/60 mt-8">Recover from Instagram ban or restriction</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div onclick="selectService(3)" 
+                     class="card-hover bg-zinc-900 border border-white/10 rounded-3xl p-8 cursor-pointer">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <div class="text-4xl mb-3">🔄</div>
+                            <h3 class="text-2xl font-semibold">Restore Account</h3>
+                            <p class="text-emerald-400 font-medium mt-1">N7,000</p>
+                        </div>
+                        <div class="text-5xl opacity-20">3</div>
+                    </div>
+                    <p class="text-white/60 mt-8">Restore disabled or hacked account</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div onclick="selectService(4)" 
+                     class="card-hover bg-zinc-900 border border-white/10 rounded-3xl p-8 cursor-pointer">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <div class="text-4xl mb-3">🔍</div>
+                            <h3 class="text-2xl font-semibold">Recover Account</h3>
+                            <p class="text-emerald-400 font-medium mt-1">N9,000</p>
+                        </div>
+                        <div class="text-5xl opacity-20">4</div>
+                    </div>
+                    <p class="text-white/60 mt-8">Recover lost or forgotten account details</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Modal -->
+    <div id="service-modal" class="hidden fixed inset-0 bg-black/90 backdrop-blur z-50 flex items-center justify-center">
+        <div class="bg-zinc-900 rounded-3xl max-w-lg w-full mx-4 overflow-hidden">
+            <div class="p-8">
+                <h3 id="modal-title" class="text-2xl font-semibold mb-6"></h3>
+                
+                <div class="mb-6">
+                    <label class="block text-sm text-white/70 mb-3">Instagram Username or Profile Link</label>
+                    <input id="ig-input" 
+                           type="text" 
+                           placeholder="@yourusername or https://instagram.com/..."
+                           class="w-full bg-zinc-800 border border-zinc-700 rounded-2xl px-6 py-5 focus:outline-none focus:border-violet-500">
+                </div>
+
+                <div class="flex gap-4">
+                    <button onclick="hideServiceModal()" 
+                            class="flex-1 py-5 border border-white/30 rounded-2xl font-medium">Cancel</button>
+                    <button onclick="startProcessing()" 
+                            class="flex-1 py-5 bg-white text-black rounded-2xl font-semibold">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Processing Screen -->
+    <div id="processing-screen" class="hidden fixed inset-0 bg-black/95 z-[60] flex items-center justify-center">
+        <div class="text-center max-w-md">
+            <div class="w-20 h-20 border-4 border-white/20 border-t-white rounded-full animate-spin mx-auto mb-8"></div>
+            <h3 class="text-2xl font-semibold mb-3" id="processing-title">Processing Request...</h3>
+            <p class="text-white/60 mb-8" id="processing-subtitle">Please wait while we verify your account details</p>
+            
+            <div class="h-1.5 bg-white/10 rounded-full overflow-hidden max-w-xs mx-auto">
+                <div id="progress-bar" class="h-1.5 bg-gradient-to-r from-pink-500 to-violet-500 w-0 processing-bar"></div>
+            </div>
+            
+            <p class="text-xs text-white/40 mt-10">This usually takes 15-25 seconds</p>
+        </div>
+    </div>
+
+    <!-- Success Screen -->
+    <div id="success-screen" class="hidden fixed inset-0 bg-black/95 z-[70] flex items-center justify-center">
+        <div class="max-w-md text-center px-6">
+            <div class="text-7xl mb-6">🎉</div>
+            <h3 class="text-3xl font-semibold mb-2">Request Submitted Successfully!</h3>
+            <p class="text-emerald-400 mb-10">Your account is being reviewed</p>
+            
+            <button onclick="showPaymentModal()" 
+                    class="w-full py-6 bg-white text-black rounded-3xl font-semibold text-xl flex items-center justify-center gap-3">
+                View Payment Status
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+            
+            <button onclick="hideAllModals()" 
+                    class="mt-6 text-white/50 hover:text-white text-sm">Back to Dashboard</button>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="payment-modal" class="hidden fixed inset-0 bg-black/95 z-[80] flex items-center justify-center">
+        <div class="bg-zinc-900 rounded-3xl max-w-lg w-full mx-4">
+            <div class="p-8 border-b border-white/10">
+                <h3 class="text-2xl font-semibold">Complete Payment</h3>
+                <p class="text-white/60 mt-1">Service: <span id="service-name" class="text-white"></span></p>
+            </div>
+            
+            <div class="p-8 space-y-8">
+                <div>
+                    <p class="text-white/70 text-sm mb-3">PAY TO:</p>
+                    <div class="bg-zinc-950 p-6 rounded-2xl">
+                        <div class="flex justify-between items-center mb-4">
+                            <div>
+                                <p class="font-mono text-lg" id="account-number">5074435427</p>
+                                <p class="text-sm text-white/60">Moniepoint MFB</p>
+                            </div>
+                            <button onclick="copyAccountDetails()" 
+                                    class="px-5 py-2 bg-white/10 hover:bg-white/20 rounded-xl text-sm flex items-center gap-2">
+                                <i class="fa-solid fa-copy"></i>
+                                <span>COPY</span>
+                            </button>
+                        </div>
+                        <p class="font-medium">Abbas Salihu</p>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <p class="text-4xl font-bold text-emerald-400" id="payment-amount">N10,000</p>
+                    <p class="text-sm text-white/60">Payment required for processing</p>
+                </div>
+
+                <div class="bg-amber-500/10 border border-amber-500/30 rounded-2xl p-5 text-sm">
+                    <p class="font-medium text-amber-400 mb-2">Important:</p>
+                    <p class="text-white/70">Make sure to complete payment before clicking "Payment Successful" below.</p>
+                </div>
+
+                <button onclick="fakePaymentConfirm()" 
+                        class="w-full py-6 bg-emerald-500 hover:bg-emerald-600 transition text-black font-semibold rounded-3xl">
+                    I HAVE MADE PAYMENT SUCCESSFULLY
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final Error Screen -->
+    <div id="final-screen" class="hidden fixed inset-0 bg-black/95 z-[90] flex items-center justify-center">
+        <div class="text-center max-w-md px-6">
+            <i class="fa-solid fa-circle-exclamation text-7xl text-rose-500 mb-6"></i>
+            <h3 class="text-3xl font-semibold mb-4">Payment Not Verified</h3>
+            <p class="text-white/70 mb-10">We could not verify your payment. Please contact support.</p>
+            
+            <a href="mailto:KristinMckeend@usa.com" 
+               class="block w-full py-5 bg-white text-black rounded-3xl font-semibold mb-6">
+                Contact Support: KristinMckeend@usa.com
+            </a>
+            
+            <button onclick="hideAllModals()" 
+                    class="text-white/50 hover:text-white">Return to Dashboard</button>
+        </div>
+    </div>
+
+    <script>
+        let currentUser = "";
+        let selectedService = 0;
+        let servicePrices = {
+            1: {name: "Verify Account", price: "N10,000"},
+            2: {name: "Unban Account", price: "N13,000"},
+            3: {name: "Restore Account", price: "N7,000"},
+            4: {name: "Recover Account", price: "N9,000"}
+        };
+
+        function showSignup() {
+            document.getElementById('signup-modal').classList.remove('hidden');
+            document.getElementById('username').focus();
+        }
+
+        function hideSignup() {
+            document.getElementById('signup-modal').classList.add('hidden');
+        }
+
+        function handleSignup() {
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+            
+            if (!username || !password) {
+                alert("Please fill all fields");
+                return;
+            }
+            
+            // Simple validation
+            if (!/[a-zA-Z]/.test(username) || !/\d/.test(username)) {
+                alert("Username must contain both letters and numbers");
+                return;
+            }
+            
+            if (password.length < 8) {
+                alert("Password must be at least 8 characters");
+                return;
+            }
+            
+            currentUser = username;
+            document.getElementById('current-username').textContent = "@" + username;
+            
+            hideSignup();
+            document.getElementById('landing').classList.add('hidden');
+            document.getElementById('dashboard').classList.remove('hidden');
+        }
+
+        function logout() {
+            if (confirm("Logout?")) {
+                location.reload();
+            }
+        }
+
+        function selectService(service) {
+            selectedService = service;
+            const info = servicePrices[service];
+            
+            document.getElementById('modal-title').textContent = info.name;
+            document.getElementById('service-modal').classList.remove('hidden');
+        }
+
+        function hideServiceModal() {
+            document.getElementById('service-modal').classList.add('hidden');
+        }
+
+        function startProcessing() {
+            const input = document.getElementById('ig-input').value.trim();
+            if (!input) {
+                alert("Please enter your Instagram username or link");
+                return;
+            }
+            
+            hideServiceModal();
+            document.getElementById('processing-screen').classList.remove('hidden');
+            
+            // Fake processing time (18 seconds)
+            setTimeout(() => {
+                document.getElementById('processing-screen').classList.add('hidden');
+                document.getElementById('success-screen').classList.remove('hidden');
+            }, 18500);
+        }
+
+        function showPaymentModal() {
+            document.getElementById('success-screen').classList.add('hidden');
+            const info = servicePrices[selectedService];
+            
+            document.getElementById('service-name').textContent = info.name;
+            document.getElementById('payment-amount').textContent = info.price;
+            document.getElementById('payment-modal').classList.remove('hidden');
+        }
+
+        function copyAccountDetails() {
+            const text = "5074435427\nMoniepoint MFB\nAbbas Salihu";
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Account details copied!");
+            });
+        }
+
+        function fakePaymentConfirm() {
+            document.getElementById('payment-modal').classList.add('hidden');
+            document.getElementById('final-screen').classList.remove('hidden');
+        }
+
+        function hideAllModals() {
+            document.querySelectorAll('.fixed').forEach(modal => {
+                modal.classList.add('hidden');
+            });
+        }
+
+        // Tailwind script already loaded via CDN
+        console.log("%cInstagram Verification Demo loaded successfully", "color:#E1306C; font-family:monospace");
+    </script>
+</body>
+</html>
+    
+  </body>
+  
+</html>
